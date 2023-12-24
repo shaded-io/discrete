@@ -6,3 +6,11 @@
  */
 
 rootProject.name = "discrete"
+
+sequenceOf(
+  "service",
+  "common"
+).forEach {
+  include("discrete-$it")
+  project(":discrete-$it").projectDir = file(it)
+}
